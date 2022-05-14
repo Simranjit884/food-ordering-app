@@ -9,8 +9,8 @@ const Header = () => {
         <h1>ReactMeal</h1>
         <button>Cart</button>
       </header>
-      <div>
-        <img src={mealsImage} />
+      <div className={classes["main-image"]}>
+        <img src={mealsImage} alt="A table full of delicious food" />
       </div>
     </Fragment>
   );
