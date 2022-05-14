@@ -1,9 +1,13 @@
+import CartIcon from "../Cart/CardIcon";
+
 const HeaderCardButton = (props) => {
   return (
     <button>
-      <span></span>
-      <span></span>
-      <span></span>
+      <span>
+        <CartIcon />
+      </span>
+      <span>Your Cart</span>
+      <span>3</span>
     </button>
   );
 };
