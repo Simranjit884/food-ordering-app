@@ -1,6 +1,7 @@
+import classes from "./Card.js";
 
-const Card = props => {
-    return <div>{props.children}</div>
-}
+const Card = (props) => {
+  return <div className={classes.card}>{props.children}</div>;
+};
 
 export default Card;
