@@ -1,9 +1,11 @@
+import classes from './Modal.module.css';
+
 const BackDrop = (props) => {
-  return <div></div>;
+  return <div className={classes.backdrop}></div>;
 };
 const OverLay = (props) => {
   return (
-    <div>
+    <div className={classes.modal}>
       <div>{props.children}</div>
     </div>
   );
