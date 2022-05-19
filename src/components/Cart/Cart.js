@@ -1,5 +1,5 @@
 import Modal from '../UI/Modal';
-import classes from './card.module.css';
+import classes from './Cart.module.css';
 
 const Cart = (props) => {
   const cartitems = (
