@@ -1,6 +1,8 @@
+import classes from './card.module.css';
+
 const Cart = (props) => {
   const cartitems = (
-    <ul>
+    <ul className={classes["cart-items"]}>
       {[{ id: "c1", name: "Sushi", amount: 2, price: 12.99 }].map((item) => (
         <li>{item.name}</li>
       ))}
@@ -9,14 +11,14 @@ const Cart = (props) => {
 
   return (
     <div>
-      cartitems
-      <div>
+      {cartitems}
+      <div className={classes.total}>
         <span>Total Amount</span>
         <span>35.65</span>
       </div>
-      <div>
-        <button>Close</button>
-        <button>Order</button>
+      <div className={classes.actions}>
+        <button className={classes['button--alt']}>Close</button>
+        <button className={classes.button}>Order</button>
       </div>
     </div>
   );
