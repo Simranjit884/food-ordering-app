@@ -1,6 +1,6 @@
 import classes from "./MealItemForm.module.css";
 import Input from "../../UI/Input";
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 
 const MealItemForm = (props) => {
   const [formIsValid, useFormIsValid] = useState(true);
@@ -15,9 +15,11 @@ const MealItemForm = (props) => {
       enteredAmount.trim().length === 0 ||
       enteredAmountNumber.length < 1 ||
       enteredAmountNumber > 5
-    )
+    ) {
       useFormIsValid(false);
       return;
+    }
+    props.onAddToCart(enteredAmountNumber);
   };
   return (
     <form className={classes.form} onSubmit={submitHandler}>
