@@ -1,9 +1,9 @@
 import CartContext from "./cart-context";
 
-const CardProvider = (props) => {
-    const addCartItemHandler = () => {};
+const CartProvider = (props) => {
+    const addCartItemHandler = (item) => {};
 
-    const removeCartItemHandler = () => {};
+    const removeCartItemHandler = (id) => {};
 
   const cartContext = {
     items: [],
@@ -19,4 +19,4 @@ const CardProvider = (props) => {
   );
 };
 
-export default CardProvider;
+export default CartProvider;
