@@ -3,7 +3,7 @@ import Input from "../../UI/Input";
 import { useRef } from "react";
 
 const MealItemForm = (props) => {
-  // const cartInputRef = useRef();
+  const cartInputRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -20,6 +20,7 @@ const MealItemForm = (props) => {
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <Input
+        ref={cartInputRef}
         label="Amount"
         input={{
           id: "amount_" + props.id,
