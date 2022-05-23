@@ -3,7 +3,7 @@ import Input from "../../UI/Input";
 import { useRef, useState } from 'react';
 
 const MealItemForm = (props) => {
-  const [formIsValid, useFormIsValid] = useState(true);
+  const [formIsValid, setFormIsValid] = useState(true);
   const cartInputRef = useRef();
 
   const submitHandler = (event) => {
@@ -16,7 +16,7 @@ const MealItemForm = (props) => {
       enteredAmountNumber.length < 1 ||
       enteredAmountNumber > 5
     ) {
-      useFormIsValid(false);
+      setFormIsValid(false);
       return;
     }
     props.onAddToCart(enteredAmountNumber);
