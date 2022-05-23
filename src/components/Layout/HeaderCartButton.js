@@ -1,12 +1,12 @@
 import CartIcon from "../Cart/CardIcon";
-import classes from "./HeaderCardButton.module.css";
+import classes from "./HeaderCartButton.module.css";
 import { useContext } from "react";
-import CardContext from "../../Store/cart-context";
+import CartContext from "../../Store/cart-context";
 
-const HeaderCardButton = (props) => {
-  const cartCntxt = useContext(CardContext);
+const HeaderCartButton = (props) => {
+  const cartCntxt = useContext(CartContext);
   const numberOfCartItems = cartCntxt.items.reduce((TotalSum, item) => {
-    return TotalSum + item;
+    return TotalSum + item.amount;
   }, 0);
 
   return (
@@ -20,4 +20,4 @@ const HeaderCardButton = (props) => {
   );
 };
 
-export default HeaderCardButton;
+export default HeaderCartButton;
