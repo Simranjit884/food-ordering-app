@@ -8,9 +8,14 @@ const Cart = (props) => {
   const cartCntxt = useContext(CartContext);
   const totalAmount = `$${cartCntxt.totalAmount.toFixed(2)}`;
   const hasItems = cartCntxt.items.length;
+  
+  const addItemToCartHandler = (item) => {};
+
+  const removeItemFromCartHandler = (id) => {};
+
   const cartitems = (
     <ul className={classes["cart-items"]}>
-      {[{ id: "c1", name: "Sushi", amount: 2, price: 12.99 }].map((item) => (
+      {cartCntxt.items.map((item) => (
         <CartItem
           key={item.id}
           name={item.name}
@@ -22,10 +27,6 @@ const Cart = (props) => {
       ))}
     </ul>
   );
-
-  const addItemToCartHandler = (item) => {};
-
-  const removeItemFromCartHandler = (id) => {};
 
   return (
     <Modal onClose={props.onClose}>
