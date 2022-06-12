@@ -32,13 +32,14 @@ const DUMMY_MEALS = [
 
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchMeals = async () => {
       const url =
         "https://react-http-32f2a-default-rtdb.firebaseio.com/meals.json";
       const response = await fetch(url);
       const responseData = await response.json();
-      
+
       const loadedMeals = [];
 
       for (const key in responseData) {
@@ -50,10 +51,19 @@ const AvailableMeals = () => {
         });
       }
       setMeals(loadedMeals);
+      setIsLoading(false);
     };
 
     fetchMeals();
   }, []);
+
+  if (isLoading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
 
   const mealsList = meals.map((meals) => (
     <MealItem
