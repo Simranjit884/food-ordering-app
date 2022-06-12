@@ -1,6 +1,10 @@
 const Checkout = (props) => {
+    const onSubmitHandler = (event) => {
+        event.preventDefault();
+    }
+    
   return (
-    <form>
+    <form onSubmit={onSubmitHandler}>
       <div>
         <label htmlFor="name">Your Name</label>
         <input type="text" id="name" />
