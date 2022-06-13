@@ -1,4 +1,8 @@
+// import { useRef } from 'react';
 import classes from "./Checkout.module.css";
+
+const isEmpty = value => value.trim() === '';
+const isNotFiveChars = value => value.trim().lenth !== 5;
 
 const Checkout = (props) => {
   const confirmHandler = (event) => {
