@@ -1,12 +1,27 @@
-// import { useRef } from 'react';
+import { useRef } from 'react';
 import classes from "./Checkout.module.css";
 
 const isEmpty = value => value.trim() === '';
-const isNotFiveChars = value => value.trim().lenth !== 5;
+const isFiveChars = value => value.trim().lenth === 5;
 
 const Checkout = (props) => {
+  const nameInputRef = useRef();
+  const streetInputRef = useRef();
+  const postalCodeRef = useRef();
+  const cityInputRef = useRef();
+
   const confirmHandler = (event) => {
     event.preventDefault();
+
+    const enteredName = nameInputRef.current.value;
+    const enteredStreet = streetInputRef.current.value;
+    const enteredPostalCode = postalCodeRef.current.value;
+    const enteredCity = cityInputRef.current.value;
+
+    const enteredNameIsValid = !isEmpty(enteredName);
+    const enteredStreetIsValid = !isEmpty(enteredStreet);
+    const enteredPostalCodeIsValid = !isEmpty(enteredPostalCode);
+    const enteredCityIsValid = isFiveChars(enteredCity);
   };
 
   return (
