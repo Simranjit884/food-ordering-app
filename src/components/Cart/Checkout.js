@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import classes from "./Checkout.module.css";
 
 const isEmpty = (value) => value.trim() === "";
-const isFiveChars = (value) => value.trim().lenth === 5;
+const isFiveChars = (value) => value.trim().length === 5;
 
 const Checkout = (props) => {
   const [formInputValidity, setFormInputValidity] = useState({
@@ -11,6 +11,7 @@ const Checkout = (props) => {
     city: true,
     postalCode: true,
   });
+
   const nameInputRef = useRef();
   const streetInputRef = useRef();
   const postalCodeRef = useRef();
@@ -30,8 +31,8 @@ const Checkout = (props) => {
     const enteredPostalCodeIsValid = isFiveChars(enteredPostalCode);
 
     setFormInputValidity({
-      name: enteredCityIsValid,
-      street: enteredCityIsValid,
+      name: enteredNameIsValid,
+      street: enteredStreetIsValid,
       city: enteredCityIsValid,
       postalCode: enteredPostalCodeIsValid,
     });
