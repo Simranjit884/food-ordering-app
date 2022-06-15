@@ -42,6 +42,7 @@ const Cart = (props) => {
     if (response.ok) {
       setIsSubmitting(false);
       setDidSubmit(true);
+      cartCntxt.clearCart();
     }
   };
 
